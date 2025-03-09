@@ -3,7 +3,8 @@ const axios = require("axios");
 const cors = require("cors");
 const app = express();
 
-app.use(cors()); // Enable CORS
+// ✅ Allow CORS from your website
+app.use(cors({ origin: "https://tariffy-club.webflow.io" }));
 
 app.get("/lookup", async (req, res) => {
     let barcode = req.query.barcode;
